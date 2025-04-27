@@ -1,0 +1,6 @@
+[client]
+database = test
+user = cloud
+host = localhost
+password = toor
+port = 3306
