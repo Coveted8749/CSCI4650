@@ -1,7 +1,29 @@
-Commit notes 4/26: 
+You can also just run these queries into a running mysql cli: sudo mysql -u root
+CREATE USER 'user'@'localhost' IDENTIFIED BY '123456';
+CREATE DATABASE cloudcuisine;
+GRANT ALL PRIVILEGES ON cloudcuisine.* TO 'user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
 
-This likely will not run after downloaded, as I changed the database engine and that requires migration. In the settings.py, change that to match your login info for mysql. We probably should change to using the .cnf method (which I have an example for, but does nothing right now) but this is fine for now. 
 
-Run python manage.py migrate after fixing mysql info.   
+Create a virtual environment: python3 -m venv venv
+source venv/bin/activate
 
-Also, I added (manually) the mysql requirement in requirements.txt. This assumes Python3.11, but in theory this should run on earlier versions, you might just need to manually use pip to install the requirements.
+llMay need to add pkg-config libmysqlclient-dev to install mysql
+
+Install requirements: pip install -r requirements.txt
+pip install python-dotenv
+
+
+Apply migrations: python manage.py migrate
+
+Create django super user: python manage.py createsuperuser
+
+
+Run: python manage.py runserver
+
+Visit http://127.0.0.1:8000/admin to log into the admin panel, or check the API at:
+http://127.0.0.1:8000/api/restaurants/
+http://127.0.0.1:8000/api/restaurants/1/
+
+From here, you can execute the dummydatapopulation sql statements into mysql directly and the app will be populated.
