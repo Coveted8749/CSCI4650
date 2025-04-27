@@ -73,13 +73,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cloud_cuisine.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+<<<<<<< HEAD
         # NOTE: can change to this method but it was 
         # not working very well
 #        "OPTIONS": {
@@ -97,8 +97,18 @@ DATABASES = {
         'PORT': '3306',
     
   
+=======
+        'NAME': 'cloudcuisine',
+        'USER': 'user',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+>>>>>>> 5698f37 ("Database worksish")
     }
 }
+
+
+
 
 
 # Password validation
@@ -144,3 +154,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
