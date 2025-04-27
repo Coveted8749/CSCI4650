@@ -24,7 +24,7 @@ CREATE TABLE store (
 CREATE TABLE user (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE,
-    password VARCHAR(255),
+    password VARCHAR(128),
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     number_of_reviews INT DEFAULT 0
