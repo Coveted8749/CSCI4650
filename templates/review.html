@@ -1,0 +1,42 @@
+{% include 'navbar.html' %} 
+{% load static %} 
+<link rel="stylesheet" href="{% static 'styles/style.css' %}"> 
+<div class="container">
+  <div class="business-header">
+    <h1>Joe's Pizza</h1>
+    <div class="rating">★★★★☆ (4.0)</div>
+  </div>
+
+  <div class="photos">
+    <img src="https://via.placeholder.com/150x100" alt="Pizza 1">
+    <img src="https://via.placeholder.com/150x100" alt="Pizza 2">
+    <img src="https://via.placeholder.com/150x100" alt="Pizza 3">
+  </div>
+
+  <div class="info">
+    <p><strong>Address:</strong> 123 Main St, New York, NY</p>
+    <p><strong>Phone:</strong> (555) 123-4567</p>
+    <p><strong>Hours:</strong> 11:00 AM – 11:00 PM</p>
+  </div>
+
+  <div class="reviews">
+    <h2>Reviews</h2>
+    <div class="review">
+      <h4>Jane D. <span class="rating">★★★★★</span></h4>
+      <p>The best slice in the city. Crispy, cheesy, perfect!</p>
+    </div>
+    <div class="review">
+      <h4>Mike S. <span class="rating">★★★☆☆</span></h4>
+      <p>Pretty good, but the wait was long during lunch hours.</p>
+    </div>
+  </div>
+
+  <div class="review-form">
+    <h2>Write a Review</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <textarea rows="4" placeholder="Your Review" required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+</div>

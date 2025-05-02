@@ -1,0 +1,32 @@
+{% include 'navbar.html' %} 
+{% load static %} 
+<link rel="stylesheet" href="{% static 'styles/style.css' %}"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Cuisine</title>
+</head>
+
+<body>
+  
+  <div class="business-list">
+    <div class="business">
+      <h2>Joe's Pizza</h2>
+      <div class="rating">★★★★☆ (4.0)</div>
+      <p>New York-style pizza in the heart of the city. Open late.</p>
+    </div>
+    <div class="business">
+      <h2>The Coffee Spot</h2>
+      <div class="rating">★★★★☆ (4.2)</div>
+      <p>Cozy café with a wide selection of coffees, teas, and snacks.</p>
+    </div>
+    <div class="business">
+      <h2>Fix-It-All Plumbing</h2>
+      <div class="rating">★★★☆☆ (3.8)</div>
+      <p>Trusted plumbing services with fast response times and fair pricing.</p>
+    </div>
+  </div>
+</body>
+</html>
