@@ -2,6 +2,7 @@ asgiref==3.8.1
 Django==5.2
 sqlparse==0.5.3
 <<<<<<< HEAD
+<<<<<<< HEAD
 mysqlclient==2.2.7
 =======
 <<<<<<< HEAD
@@ -10,3 +11,6 @@ mysqlclient=2.2.7
 mysqlclient==2.2.7
 >>>>>>> 5698f37 ("Database worksish")
 >>>>>>> fb65bfc ("Database worksish")
+=======
+mysqlclient==2.2.7
+>>>>>>> c8419650339e99b7a790460adc7df2b704fe1770

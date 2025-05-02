@@ -20,14 +20,19 @@ Apply migrations: python manage.py migrate
 Create django super user: python manage.py createsuperuser
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 From here, you can run the dummydatapopulation into mysql directly.
 >>>>>>> 5698f37 ("Database worksish")
+=======
+From here, you can run the dummydatapopulation into mysql directly.
+>>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
 Run: python manage.py runserver
 
 Visit http://127.0.0.1:8000/admin to log into the admin panel, or check the API at:
 http://127.0.0.1:8000/api/restaurants/
+<<<<<<< HEAD
 <<<<<<< HEAD
 http://127.0.0.1:8000/api/restaurants/1/
 
@@ -35,3 +40,6 @@ From here, you can execute the dummydatapopulation sql statements into mysql dir
 =======
 http://127.0.0.1:8000/api/restaurants/1/
 >>>>>>> 5698f37 ("Database worksish")
+=======
+http://127.0.0.1:8000/api/restaurants/1/
+>>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
