@@ -7,6 +7,9 @@ cd CSCI4650
 #add our db packages
 sudo yum install -y pkg-config
 sudo dnf install mariadb105
+sudo dnf install mariadb-connector-c-devel
+
+
 #need to add a higher version of the standard amazon linux python for django to work
 sudo dnf install -y git tar gcc \
                    zlib-devel bzip2-devel readline-devel \
@@ -20,18 +23,14 @@ curl https://pyenv.run | bash && \
     pyenv install 3.12.3 && \
     pyenv global 3.12.3
 #wait 6 minutes
-python -m ensurepip --upgrade
-python3 -m pip install --upgrade pip
+
 #setup the virtual environment like before
-source venv/bin/activate
-
-
 
 python3 -m venv venv
 source venv/bin/activate
+pip install --upgrade pip
 pip install -r requirements.txt
 pip install python-dotenv
-pip install django mysqlclient
 
 #Open settings.py 
 echo "Update 'DATABASES' to change the following:nano
