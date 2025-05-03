@@ -7,8 +7,6 @@ During EC2 setup go to security, click on the security url with launch-wizard. C
 Create RDS free tier. Connect it to the existing EC2 instance. Ensure whatever login credentials matches the ones in the project. Name the database cloudcuisine. I used master username of user and password 12345678 in the template. You may have to adjust dbconfig.cnf later in addition to the settings.py. Password has to have 8 characters. 
 > Obviously this is unsecure. 
 
-
-
 ### 1. Setup Project
 Connect to EC2 CLI
 ```bash
@@ -87,7 +85,7 @@ ALLOWED_HOSTS = ['your_ec2_url'] #keep the '' around the url
 }
 ```
 
-> I am not sure if you also need to modify dbconfig.cnf
+> I am not sure if you also need to modify dbconfig.cnf. I didn't mess with it and everything still worked but in case the file is in the main folder
 ```
 [client]
 database = cloudcuisine
