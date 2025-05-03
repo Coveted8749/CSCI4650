@@ -108,5 +108,5 @@ exit;
 ```bash
 python manage.py runserver 0.0.0.0:8000
 ```
-> Navigate to: http://<your-ec2-public-ip>:8000/admin
-> Note https is not supported.
+Navigate to: http://'your-ec2-public-ip':8000/admin
+>Note https is not supported.
