@@ -1,13 +1,16 @@
 # CloudCuisine Project
 
 ## AWS Setup Instructions
-Setup an EC2 and MySQL RDS on AWS
-During EC2 setup go to security and add all of the inbound groups from week 6 lecture. Additionally add port 8000 to the inbound rules.
+Setup an EC2 on AWS
+During EC2 setup go to security, click on the security url with launch-wizard. Click on the Security group ID. Edit inbound rules. Add all 4 of the inbound groups from week 6 lecture. Additionally add port 8000 to the inbound rules.
+
+Create RDS free tier. Connect it to the existing EC2 instance. Ensure whatever login credentials matches the ones in the project. Name the database cloudcuisine. I used master username of user and password 12345678 in the template. You may have to adjust dbconfig.cnf later in addition to the settings.py. Password has to have 8 characters. 
+> Obviously this is unsecure. 
+
+
+
+### 1. Setup Project
 Connect to EC2 CLI
-Ensure you modify the url to http once the server is running later.
-
-### 1. Clone Our Git Repository
-
 ```bash
 sudo yum update -y
 sudo yum install git -y
@@ -75,13 +78,23 @@ ALLOWED_HOSTS = ['your_ec2_url'] #keep the '' around the url
  DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cloud',
+        'NAME': 'cloudcusine',
         'USER': 'your_rds_username',
         'PASSWORD': 'your_rds_password',
         'HOST': 'your_rds_endpoint',
         'PORT': '3306',
     }
 }
+```
+
+> I am not sure if you also need to modify dbconfig.cnf
+```
+[client]
+database = cloudcuisine
+user = rds_username
+host = rds_endpoint
+password = rds_password
+port = 3306
 ```
 
 ```bash
@@ -103,10 +116,10 @@ SOURCE /home/ec2-user/CSCI4650/mysql_commands/schema.sql;
 SOURCE /home/ec2-user/CSCI4650/mysql_commands/dummydatapopulation.sql;
 exit;
 ```
-### 9. Run the Server
+### 9. Run the Project
 
 ```bash
 python manage.py runserver 0.0.0.0:8000
 ```
 Navigate to: http://'your-ec2-public-ip':8000/admin
->Note https is not supported.
+> Note https is not supported.
