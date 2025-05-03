@@ -25,7 +25,8 @@ Run: python manage.py runserver
 Visit http://127.0.0.1:8000/admin to log into the admin panel, or check the API at:
 http://127.0.0.1:8000/api/restaurants/
 
-Created bash script for ec2: 
+Created bash script for ec2:
+
 git clone https://github.com/Coveted8749/CSCI4650.git
 cd CSCI4650
 chmod +x aws_setup.sh

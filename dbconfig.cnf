@@ -1,6 +1,6 @@
 [client]
-database = test
-user = cloud
+database = cloudcuisine
+user = user
 host = localhost
-password = toor
+password = 12345678
 port = 3306
