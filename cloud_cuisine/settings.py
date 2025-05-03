@@ -87,15 +87,11 @@ DATABASES = {
         # password is empty, replace with yours 
         # do not push to github without either changing to config file method 
         # or removing  password 
-        'NAME': 'test',
-        'USER': 'cloud',
-        'PASSWORD': '',
-        'HOST': 'localhost',
         # do not change port
         'PORT': '3306',
         'NAME': 'cloudcuisine',
         'USER': 'user',
-        'PASSWORD': '123456',
+        'PASSWORD': '12345678',
         'HOST': '127.0.0.1',
         'PORT': '3306',
 
