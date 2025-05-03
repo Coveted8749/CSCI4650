@@ -1,9 +1,10 @@
-You can also just run these queries into a running mysql cli: sudo mysql -u root
-CREATE USER 'user'@'localhost' IDENTIFIED BY '123456';
-CREATE DATABASE cloudcuisine;
-GRANT ALL PRIVILEGES ON cloudcuisine.* TO 'user'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;
+You can also just run these queries into a running mysql cli: 
+    sudo mysql -u root
+    CREATE USER 'user'@'localhost' IDENTIFIED BY '123456';
+    CREATE DATABASE cloudcuisine;
+    GRANT ALL PRIVILEGES ON cloudcuisine.* TO 'user'@'localhost';
+    FLUSH PRIVILEGES;
+    EXIT;
 
 
 Create a virtual environment: python3 -m venv venv

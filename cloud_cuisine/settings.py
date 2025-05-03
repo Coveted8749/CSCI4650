@@ -12,10 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,10 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'reviews',
-<<<<<<< HEAD
     'base.apps.BaseConfig',
-=======
->>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
 ]
 
 MIDDLEWARE = [
@@ -63,13 +56,9 @@ ROOT_URLCONF = 'cloud_cuisine.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': [
             BASE_DIR / 'templates',
         ],
-=======
-        'DIRS': [],
->>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,8 +78,6 @@ WSGI_APPLICATION = 'cloud_cuisine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-<<<<<<< HEAD
-<<<<<<< HEAD
         # NOTE: can change to this method but it was 
         # not working very well
 #        "OPTIONS": {
@@ -106,20 +93,12 @@ DATABASES = {
         'HOST': 'localhost',
         # do not change port
         'PORT': '3306',
-    
-  
-=======
-=======
->>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
         'NAME': 'cloudcuisine',
         'USER': 'user',
         'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-<<<<<<< HEAD
->>>>>>> 5698f37 ("Database worksish")
-=======
->>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
+
     }
 }
 
@@ -162,12 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-<<<<<<< HEAD
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-=======
->>>>>>> c8419650339e99b7a790460adc7df2b704fe1770
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
