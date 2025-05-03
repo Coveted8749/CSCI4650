@@ -106,7 +106,7 @@ exit;
 ### 9. Run the Server
 
 ```bash
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
 ```
 > Navigate to: http://<your-ec2-public-ip>:8000/admin
 > Note https is not supported.
