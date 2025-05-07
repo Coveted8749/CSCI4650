@@ -97,7 +97,7 @@ port = 3306
 
 Create the database that will be used to store data
 ```bash
-mysql -h cloudcuisine.cpos4e2s8woz.us-east-2.rds.amazonaws.com -P 3306 -u user -p
+mysql -h 'RDS endpoint'  -P 3306 -u user -p
 ```
 ```bash
 CREATE DATABASE cloudcuisine;
@@ -116,7 +116,7 @@ python manage.py createsuperuser
 
 ### 8. Populate Database with Dummy Data
 ```bash
-mysql -h cloudcuisine.cpos4e2s8woz.us-east-2.rds.amazonaws.com -P 3306 -u user -p
+mysql -h 'RDS endpoint' -P 3306 -u user -p
 ```
 ```mysql
 SOURCE /home/ec2-user/CSCI4650/mysql_commands/schema.sql;
