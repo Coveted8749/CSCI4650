@@ -95,6 +95,15 @@ password = rds_password
 port = 3306
 ```
 
+Create the database that will be used to store data
+```bash
+mysql -h cloudcuisine.cpos4e2s8woz.us-east-2.rds.amazonaws.com -P 3306 -u user -p
+```
+```bash
+CREATE DATABASE cloudcuisine;
+exit;
+```
+migrate django 
 ```bash
 python manage.py migrate
 ```
