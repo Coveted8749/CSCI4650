@@ -10,7 +10,13 @@
 </head>
 
 <body>
-  
+  {% if data %}
+    <p>Address: {{ data.street_address }}</p>
+  {% else %}
+    <p>No object found.</p>
+  {% endif %}
+
+
   <div class="business-list">
     <div class="business">
       <h2>Joe's Pizza</h2>

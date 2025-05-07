@@ -1,16 +1,16 @@
 -- Insert into reviews_address
-INSERT INTO reviews_address (street_address, city, state, zip, latitude, longitude) VALUES
-('3500 Wookiee Rd', 'Endor', 'CA', '94304', 37.7749, -122.4194),
-('1200 Yoda Blvd', 'Dagobah', 'LA', '92001', 34.0522, -118.2437),
-('5000 Bantha Ave', 'Tatooine', 'AZ', '85250', 36.1699, -115.1398),
-('100 Jedi Way', 'Coruscant', 'DC', '20001', 38.9072, -77.0369);
+INSERT INTO reviews_address (address_id, street_address, city, state, zip, latitude, longitude) VALUES
+(1, '3500 Wookiee Rd', 'Endor', 'CA', '94304', 37.7749, -122.4194),
+(2, '1200 Yoda Blvd', 'Dagobah', 'LA', '92001', 34.0522, -118.2437),
+(3, '5000 Bantha Ave', 'Tatooine', 'AZ', '85250', 36.1699, -115.1398),
+(4, '100 Jedi Way', 'Coruscant', 'DC', '20001', 38.9072, -77.0369);
 
 -- Insert into reviews_store
-INSERT INTO reviews_store (store_id, store_name, street_address_id) VALUES
-(1, 'The Wookiee Grill', '3500 Wookiee Rd'),
-(2, 'Dagobah Pizzeria', '1200 Yoda Blvd'),
-(3, 'Tatooine Taco & Burrito', '5000 Bantha Ave'),
-(4, 'The Jedi Noodle', '100 Jedi Way');
+INSERT INTO reviews_store (store_id, store_name, address_id) VALUES
+(1, 'The Wookiee Grill', 1),
+(2, 'Dagobah Pizzeria', 2),
+(3, 'Tatooine Taco & Burrito', 3),
+(4, 'The Jedi Noodle', 4);
 
 -- Inserting data into menu_item table
 INSERT INTO reviews_menuitem (item_id, description, price, start_date, end_date, store_id) VALUES
@@ -38,33 +38,34 @@ INSERT INTO reviews_menuitem (item_id, description, price, start_date, end_date,
 (22, 'Princess Leia’s Veggie Delight', 10.99, '2025-01-01', NULL, 4),
 (23, 'Yoda’s Wisdom', 14.99, '2025-01-01', NULL, 4),
 (24, 'The Skywalker', 15.99, '2025-01-01', NULL, 4);
--- Inserting data into user table
-INSERT INTO auth_user (password, first_name, last_name, username, is_superuser, email, is_staff, is_active, date_joined) VALUES
-('password123', 'Luke', 'Skywalker', 'LukeSkywalker87', 0, 'luke.skywalker@aol.com', 0, 1, CURDATE()),
-('password456', 'Darth', 'Vader', 'DarthVader555', 0, 'darth.vader@aol.com', 0, 1, CURDATE()),
-('password789', 'Leia', 'Organa', 'PrincessLeia23', 0, 'leia.organa@aol.com', 0, 1, CURDATE()),
-('password321', 'Han', 'Solo', 'HanSolo75', 0, 'han.solo@aol.com', 0, 1, CURDATE()),
-('password654', 'Obi-Wan', 'Kenobi', 'ObiWanKenobi42', 0, 'obiwan.kenobi@aol.com', 0, 1, CURDATE()),
-('password987', 'R2-D2', '', 'R2D2User', 0, 'r2d2@aol.com', 0, 1, CURDATE());
+-- Inserting data into customer table
+INSERT INTO customer (customer_id, password, first_name, last_name, customername) VALUES
+(1, 'password123', 'Luke', 'Skywalker', 'LukeSkywalker87'),
+(2, 'password456', 'Darth', 'Vader', 'DarthVader555'),
+(3, 'password789', 'Leia', 'Organa', 'PrincessLeia23'),
+(4, 'password321', 'Han', 'Solo', 'HanSolo75'),
+(5, 'password654', 'Obi-Wan', 'Kenobi', 'ObiWanKenobi42'), 
+(6, 'password987', 'R2-D2', '', 'R2D2User');
 
-INSERT INTO reviews_review (store_id, user_id, review_timestamp, number_of_stars, review_text) VALUES
-(1, (SELECT id FROM auth_user WHERE username = 'LukeSkywalker87'), '2025-03-01 12:30:00', 5, 'This burger was as strong as the Force itself. The Mandalorian burger with the fried egg was *out of this galaxy*. The fries? Sarlacc-level crispy.'),
-(2, (SELECT id FROM auth_user WHERE username = 'DarthVader555'), '2025-03-02 15:00:00', 4, 'Vader’s Revenge pizza has the right kick, just like my lightsaber. A bit too spicy, though. But I guess I’m just not used to the Dark Side.'),
-(3, (SELECT id FROM auth_user WHERE username = 'PrincessLeia23'), '2025-03-03 14:15:00', 3, 'The Sandcrawler was decent, but I’d prefer the Bantha Steak burrito next time. The guac was good, but it needed more spice.'),
-(4, (SELECT id FROM auth_user WHERE username = 'HanSolo75'), '2025-03-04 10:00:00', 5, 'The Skywalker ramen was *amazing*! Perfectly balanced—like the Force itself. The crispy garlic was a great touch.'),
-(1, (SELECT id FROM auth_user WHERE username = 'DarthVader555'), '2025-03-05 17:45:00', 3, 'The burger was good, but it didn’t quite capture the dark power I expected. Maybe the Mandalorian burger was too light for me.'),
-(2, (SELECT id FROM auth_user WHERE username = 'PrincessLeia23'), '2025-03-06 19:20:00', 5, 'Yoda’s Special pizza was perfect. So much flavor, it was like using the Force to deliver the best pizza. Very impressed.'),
-(3, (SELECT id FROM auth_user WHERE username = 'HanSolo75'), '2025-03-07 18:10:00', 4, 'Jabba’s Deluxe was tasty, but not spicy enough. I wanted more of a challenge, like fighting Obi-Wan.'),
-(4, (SELECT id FROM auth_user WHERE username = 'LukeSkywalker87'), '2025-03-08 09:30:00', 2, 'The Dark Side ramen was too spicy, even for me. I was choking on my own rage. But the broth had potential.'),
-(1, (SELECT id FROM auth_user WHERE username = 'PrincessLeia23'), '2025-03-09 12:25:00', 4, 'The Womp Rat Nuggets were delicious, just the right amount of crunch. The Wookiee’s burger was huge—almost like a challenge for me, but I did it!'),
-(2, (SELECT id FROM auth_user WHERE username = 'HanSolo75'), '2025-03-10 13:30:00', 3, 'The Rebel Veggie Supreme was okay, but I expected more from a place named after Yoda. I’ll stick to my Rebel Alliance snacks.'),
-(3, (SELECT id FROM auth_user WHERE username = 'LukeSkywalker87'), '2025-03-11 14:00:00', 5, 'The Bantha Steak burrito was a masterpiece. It made me feel like I could conquer the galaxy, one bite at a time.'),
-(4, (SELECT id FROM auth_user WHERE username = 'PrincessLeia23'), '2025-03-12 11:20:00', 5, 'Obi-Wan’s Delight was the best ramen I’ve had in ages. I almost felt the Force guiding me with every slurp.'),
-(1, (SELECT id FROM auth_user WHERE username = 'HanSolo75'), '2025-03-13 17:35:00', 5, 'Chewie’s Double Stack was out of this world. It felt like I was mastering the Force with each bite.'),
-(2, (SELECT id FROM auth_user WHERE username = 'LukeSkywalker87'), '2025-03-14 18:10:00', 5, 'Yoda’s Special pizza was simple, but perfect. It’s like Yoda himself made it. This is the pizza you seek.'),
-(3, (SELECT id FROM auth_user WHERE username = 'DarthVader555'), '2025-03-15 14:25:00', 5, 'The Sandcrawler burrito is what the galaxy needs. The rice and beans were well-seasoned, and the guac was a nice touch.'),
-(4, (SELECT id FROM auth_user WHERE username = 'ObiWanKenobi42'), '2025-03-16 13:40:00', 5, 'Yoda’s Wisdom ramen was exactly what I needed. Balanced, like the Force itself. I could live off this.'),
-(1, (SELECT id FROM auth_user WHERE username = 'PrincessLeia23'), '2025-03-17 19:10:00', 5, 'The Mandalorian burger made me feel like I was back in the cockpit of the Millennium Falcon. Definitely recommend!'),
-(2, (SELECT id FROM auth_user WHERE username = 'HanSolo75'), '2025-03-18 20:05:00', 3, 'Death Star Supreme had too much cheese. You could say it was overkill. But it was still pretty good.'),
-(3, (SELECT id FROM auth_user WHERE username = 'LukeSkywalker87'), '2025-03-19 17:25:00', 4, 'Boba\'s Favorite had a lot of flavor, but the shrimp was a little undercooked. I’ll give it another shot though.'),
-(4, (SELECT id FROM auth_user WHERE username = 'ObiWanKenobi42'), '2025-03-20 18:00:00', 4, 'Luke’s ramen was decent, but it didn’t quite hit the mark for me. Still, the broth was solid, and the pork');
+INSERT INTO reviews_review (store_id, customer_id, review_timestamp, number_of_stars, review_text) VALUES
+(1, (SELECT customer_id FROM customer WHERE customername = 'LukeSkywalker87'), '2025-03-01 12:30:00', 5, 'This burger was as strong as the Force itself. The Mandalorian burger with the fried egg was *out of this galaxy*. The fries? Sarlacc-level crispy.'),
+(2, (SELECT customer_id FROM customer WHERE customername = 'DarthVader555'), '2025-03-02 15:00:00', 4, 'Vader’s Revenge pizza has the right kick, just like my lightsaber. A bit too spicy, though. But I guess I’m just not used to the Dark Side.'),
+(3, (SELECT customer_id FROM customer WHERE customername = 'PrincessLeia23'), '2025-03-03 14:15:00', 3, 'The Sandcrawler was decent, but I’d prefer the Bantha Steak burrito next time. The guac was good, but it needed more spice.'),
+(4, (SELECT customer_id FROM customer WHERE customername = 'HanSolo75'), '2025-03-04 10:00:00', 5, 'The Skywalker ramen was *amazing*! Perfectly balanced—like the Force itself. The crispy garlic was a great touch.'),
+(1, (SELECT customer_id FROM customer WHERE customername = 'DarthVader555'), '2025-03-05 17:45:00', 3, 'The burger was good, but it didn’t quite capture the dark power I expected. Maybe the Mandalorian burger was too light for me.'),
+(2, (SELECT customer_id FROM customer WHERE customername = 'PrincessLeia23'), '2025-03-06 19:20:00', 5, 'Yoda’s Special pizza was perfect. So much flavor, it was like using the Force to deliver the best pizza. Very impressed.'),
+(3, (SELECT customer_id FROM customer WHERE customername = 'HanSolo75'), '2025-03-07 18:10:00', 4, 'Jabba’s Deluxe was tasty, but not spicy enough. I wanted more of a challenge, like fighting Obi-Wan.'),
+(4, (SELECT customer_id FROM customer WHERE customername = 'LukeSkywalker87'), '2025-03-08 09:30:00', 2, 'The Dark Side ramen was too spicy, even for me. I was choking on my own rage. But the broth had potential.'),
+(1, (SELECT customer_id FROM customer WHERE customername = 'PrincessLeia23'), '2025-03-09 12:25:00', 4, 'The Womp Rat Nuggets were delicious, just the right amount of crunch. The Wookiee’s burger was huge—almost like a challenge for me, but I did it!'),
+(2, (SELECT customer_id FROM customer WHERE customername = 'HanSolo75'), '2025-03-10 13:30:00', 3, 'The Rebel Veggie Supreme was okay, but I expected more from a place named after Yoda. I’ll stick to my Rebel Alliance snacks.'),
+(3, (SELECT customer_id FROM customer WHERE customername = 'LukeSkywalker87'), '2025-03-11 14:00:00', 5, 'The Bantha Steak burrito was a masterpiece. It made me feel like I could conquer the galaxy, one bite at a time.'),
+(4, (SELECT customer_id FROM customer WHERE customername = 'PrincessLeia23'), '2025-03-12 11:20:00', 5, 'Obi-Wan’s Delight was the best ramen I’ve had in ages. I almost felt the Force guiding me with every slurp.'),
+(1, (SELECT customer_id FROM customer WHERE customername = 'HanSolo75'), '2025-03-13 17:35:00', 5, 'Chewie’s Double Stack was out of this world. It felt like I was mastering the Force with each bite.'),
+(2, (SELECT customer_id FROM customer WHERE customername = 'LukeSkywalker87'), '2025-03-14 18:10:00', 5, 'Yoda’s Special pizza was simple, but perfect. It’s like Yoda himself made it. This is the pizza you seek.'),
+(3, (SELECT customer_id FROM customer WHERE customername = 'DarthVader555'), '2025-03-15 14:25:00', 5, 'The Sandcrawler burrito is what the galaxy needs. The rice and beans were well-seasoned, and the guac was a nice touch.'),
+(4, (SELECT customer_id FROM customer WHERE customername = 'ObiWanKenobi42'), '2025-03-16 13:40:00', 5, 'Yoda’s Wisdom ramen was exactly what I needed. Balanced, like the Force itself. I could live off this.'),
+(1, (SELECT customer_id FROM customer WHERE customername = 'PrincessLeia23'), '2025-03-17 19:10:00', 5, 'The Mandalorian burger made me feel like I was back in the cockpit of the Millennium Falcon. Definitely recommend!'),
+(2, (SELECT customer_id FROM customer WHERE customername = 'HanSolo75'), '2025-03-18 20:05:00', 3, 'Death Star Supreme had too much cheese. You could say it was overkill. But it was still pretty good.'),
+(3, (SELECT customer_id FROM customer WHERE customername = 'LukeSkywalker87'), '2025-03-19 17:25:00', 4, 'Bobas Favorite had a lot of flavor, but the shrimp was a little undercooked. I’ll give it another shot though.'),
+(4, (SELECT customer_id FROM customer WHERE customername = 'ObiWanKenobi42'), '2025-03-20 18:00:00', 4, 'Luke’s ramen was decent, but it didn’t quite hit the mark for me. Still, the broth was solid, and the pork');
+                                                                                   
