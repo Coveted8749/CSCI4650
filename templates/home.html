@@ -10,14 +10,16 @@
 </head>
 
 <body>
-  {% if addressData %}
-    <p>Address: {{ addressData.street_address }}</p>
-  {% else %}
+  {% for address in addressData %}
+    <li>
+      <p>Address: {{ address.street_address }}</p>
+    </li>
+  {% empty %}
     <p>No object found.</p>
-  {% endif %}
+  {% endfor %}
 
   {% if storeData %}
-    <p>Address: {{ storeData.store_name }}</p>
+    <p>Store: {{ storeData.store_name }}</p>
   {% else %}
     <p>No store found.</p>
   {% endif %}
