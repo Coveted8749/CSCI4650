@@ -1,0 +1,39 @@
+{% include 'navbar.html' %} 
+{% load static %} 
+<link rel="stylesheet" href="{% static 'styles/style.css' %}"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ store.store_name }}</title>
+</head>
+<div class="container">
+<body>
+    <h1>{{ store.store_name }}</h1>
+
+    <div class="info">
+        <p><strong>Address:</strong> {{ store.address.street_address }} </p>
+        <p><strong>City:</strong> {{ store.address.city }} </p>
+        <p><strong>Zipcode:</strong> {{ store.address.zip}}</p>
+    </div>
+
+    <div class="reviews">
+        <h2>Reviews:</h2>
+        <ul>
+            {% for review in reviews %}
+                <div class="review">
+                    <strong>Customer:</strong> {{ review.customer.customername }}<br>
+                    <strong>Rating:</strong> {{ review.number_of_stars }} stars<br>
+                    <strong>Review:</strong> {{ review.review_text }}<br>
+                    <strong>Date:</strong> {{ review.review_timestamp }}
+                </div>
+            {% empty %}
+                <li>No reviews for this store.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</div>
+</html>

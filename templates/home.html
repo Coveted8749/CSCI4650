@@ -10,37 +10,22 @@
 </head>
 
 <body>
-  {% for address in addressData %}
-    <li>
-      <p>Address: {{ address.street_address }}</p>
-    </li>
-  {% empty %}
-    <p>No object found.</p>
-  {% endfor %}
-
-  {% if storeData %}
-    <p>Store: {{ storeData.store_name }}</p>
-  {% else %}
-    <p>No store found.</p>
-  {% endif %}
-
-
   <div class="business-list">
-    <div class="business">
-      <h2>Joe's Pizza</h2>
-      <div class="rating">★★★★☆ (4.0)</div>
-      <p>New York-style pizza in the heart of the city. Open late.</p>
-    </div>
-    <div class="business">
-      <h2>The Coffee Spot</h2>
-      <div class="rating">★★★★☆ (4.2)</div>
-      <p>Cozy café with a wide selection of coffees, teas, and snacks.</p>
-    </div>
-    <div class="business">
-      <h2>Fix-It-All Plumbing</h2>
-      <div class="rating">★★★☆☆ (3.8)</div>
-      <p>Trusted plumbing services with fast response times and fair pricing.</p>
-    </div>
+    
+    <h1>Stores</h1>
+
+    {% for store in storeData %}
+      <div class="business">
+        <h2>
+          <a href="{% url 'store_detail' store.pk %}">
+            {{ store.store_name }}
+          </a>
+        </h2>
+      </div>
+  
+    {% empty %}
+      <p>No object found.</p>
+    {% endfor %}
   </div>
 </body>
 </html>
