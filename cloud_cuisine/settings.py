@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4)2y0@2$^8g6#k!vr&b8iaac-xrof28h!=hdj&1eoh-d$db4nj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-18-191-208-27.us-east-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['your_ec2_url', 'your_Public_IPv4_Address' 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -90,9 +90,9 @@ DATABASES = {
         # do not change port
         'PORT': '3306',
         'NAME': 'cloudcuisine',
-        'USER': 'user',
-        'PASSWORD': '12345678',
-        'HOST': '127.0.0.1',
+        'USER': 'your_rds_username',
+        'PASSWORD': 'your_rds_password',
+        'HOST': 'your_rds_endpoint',
         'PORT': '3306',
 
     }

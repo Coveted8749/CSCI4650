@@ -69,7 +69,7 @@ nano cloud_cuisine/settings.py
 
 ```python
 
-ALLOWED_HOSTS = ['your_ec2_url'] #keep the '' around the url
+ALLOWED_HOSTS = ['your_ec2_url', 'your_Public_IPv4_Address'] #keep the '' around the url
 
 #... and farther down
  
