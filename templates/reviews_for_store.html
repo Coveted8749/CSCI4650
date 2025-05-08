@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews for {{ store.store_name }}</title>
+</head>
+<body>
+    <h1>Reviews for {{ store.store_name }}</h1>
+
+    {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <strong>{{ review.user.first_name }} {{ review.user.last_name }}</strong><br>
+                    Rating: {{ review.number_of_stars }}<br>
+                    Comment: {{ review.review_text }}<br>
+                    Date: {{ review.review_timestamp|date:"Y-m-d H:i" }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
+</body>
+</html>
