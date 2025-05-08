@@ -85,6 +85,16 @@ ALLOWED_HOSTS = ['your_ec2_url', 'your_Public_IPv4_Address'] #keep the '' around
 }
 ```
 
+> I am not sure if you also need to modify dbconfig.cnf. I didn't mess with it and everything still worked but in case the file is in the main folder
+```
+[client]
+database = cloudcuisine
+user = rds_username
+host = rds_endpoint
+password = rds_password
+port = 3306
+```
+
 Create the database that will be used to store data
 ```bash
 mysql -h 'RDS endpoint'  -P 3306 -u user -p

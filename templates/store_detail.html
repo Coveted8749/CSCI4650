@@ -18,6 +18,10 @@
         <p><strong>Zipcode:</strong> {{ store.address.zip}}</p>
     </div>
 
+    <a href="{% url 'add_review' store_id=store.store_id%}">
+    <button type="button">Add a Review</button>
+    </a>
+
     <div class="reviews">
         <h2>Reviews:</h2>
         <ul>

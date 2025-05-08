@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4)2y0@2$^8g6#k!vr&b8iaac-xrof28h!=hdj&1eoh-d$db4nj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['your_ec2_url', 'your_Public_IPv4_Address' 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['54.197.180.115', '54.197.180.115' 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'reviews',
-    'base'
+    'reviews'
 ]
 
 MIDDLEWARE = [
@@ -90,9 +89,9 @@ DATABASES = {
         # do not change port
         'PORT': '3306',
         'NAME': 'cloudcuisine',
-        'USER': 'your_rds_username',
-        'PASSWORD': 'your_rds_password',
-        'HOST': 'your_rds_endpoint',
+        'USER': 'user',
+        'PASSWORD': '12345678',
+        'HOST': 'cloudcuisine.c0tkwquee1wr.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
 
     }

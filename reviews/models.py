@@ -172,9 +172,10 @@ class ReviewsReview(models.Model):
     pk = models.CompositePrimaryKey('customer_id', 'review_timestamp')
     store = models.ForeignKey('ReviewsStore', models.DO_NOTHING, blank=True, null=True)
     customer = models.ForeignKey(Customer, models.DO_NOTHING)
-    review_timestamp = models.DateTimeField()
+    review_timestamp = models.DateTimeField(auto_now_add=True)
     number_of_stars = models.IntegerField(blank=True, null=True)
     review_text = models.TextField(blank=True, null=True)
+    #user = models.TextField(default='test')
 
     class Meta:
         managed = False
